@@ -64,6 +64,27 @@ TEST(LargeNumberTests, MultiplyTest) {
 	EXPECT_EQ(true, R == E);
 }
 
+TEST(LargeNumberTests, RaiseToPowerTest) {
+
+	LargeNumber I("123");
+	LargeNumber J("3");
+	LargeNumber E("1860867");  // expected result
+
+	LargeNumber R = I ^ J;
+
+	EXPECT_EQ(true, R == E);
+}
+
+TEST(LargeNumberTests, RaiseToPowerWithIntTest) {
+
+	LargeNumber I("45");
+	LargeNumber E("184528125");  // expected result
+
+	LargeNumber R = I ^ 5;
+
+	EXPECT_EQ(true, R == E);
+}
+
 int main(int argc, char **argv) {
 	testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();

@@ -202,3 +202,30 @@ LargeNumber LargeNumber::operator* (LargeNumber const& rhs) {
 
 	return LargeNumber(s);
 }
+
+LargeNumber LargeNumber::operator^ (LargeNumber const& rhs) {
+
+	string str = reverse(rhs.num);
+	LargeNumber res = LargeNumber("1");
+
+	// generating x ^ y using multiplication
+	// 2 ^ 5 = 2 * 2 * 2 * 2
+	int base = 1;
+	for (int i = 0; i < str.length(); i++) {
+		int c = (int)str[i] - (int)'0';
+		for (int j = 0; j < c*base; j++) {
+			res = res * *this;
+		}
+		base = base * 10;
+	}
+
+	return res;
+}
+
+LargeNumber LargeNumber::operator^ (int n) {
+	LargeNumber res = LargeNumber("1");
+	for (int i = 0; i < n; i++) {
+		res = res * *this;
+	}
+	return res;
+}

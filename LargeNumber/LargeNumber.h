@@ -13,7 +13,8 @@ public:
 	LargeNumber operator +(LargeNumber const& rhs);
 	LargeNumber operator -(LargeNumber const& rhs);
 	LargeNumber operator *(LargeNumber const& rhs);
-
+	LargeNumber operator ^(LargeNumber const& rhs);
+	LargeNumber operator ^(int n);
 
 	LargeNumber reverse();
 	string reverse(string str);
