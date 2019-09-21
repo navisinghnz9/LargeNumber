@@ -105,7 +105,3 @@ TEST(LargeNumberTests, ExpresessionTest) {
 	EXPECT_EQ(671, X.length());
 }
 
-int main(int argc, char **argv) {
-	testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
-}

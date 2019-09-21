@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "LargeNumber.h"
 
-
+LargeNumber::LargeNumber(): num("0") {}
 LargeNumber::LargeNumber(string num) : num(num) {}
 
 int LargeNumber::length () {
@@ -228,4 +228,14 @@ LargeNumber LargeNumber::operator^ (int n) {
 		res = res * *this;
 	}
 	return res;
+}
+
+ostream& operator<<(ostream& os, LargeNumber& rhs) {
+	os << rhs.num;
+	return os;
+}
+
+istream& operator >> (istream &in, LargeNumber& rhs) {
+	in >> rhs.num;
+	return in;
 }
