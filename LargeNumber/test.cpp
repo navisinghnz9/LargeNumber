@@ -13,7 +13,18 @@ TEST(LargeNumberTests, NumberReverseTest) {
 
 	LargeNumber I("12345678");
 	LargeNumber E("87654321"); // expected result
-	LargeNumber R = I.reverse(); // actual result
+	LargeNumber R = I.reverse();
+
+	EXPECT_EQ(true, R == E);
+}
+
+TEST(LargeNumberTests, AddTwoNumbersTest) {
+
+	LargeNumber I("12345678");
+	LargeNumber J("87654321");
+	LargeNumber E("99999999");  // expected result
+
+	LargeNumber R = I + J;
 
 	EXPECT_EQ(true, R == E);
 }

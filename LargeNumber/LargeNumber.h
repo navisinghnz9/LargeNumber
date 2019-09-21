@@ -9,6 +9,7 @@ class LargeNumber {
 public:
 	LargeNumber(string num);
 	bool operator ==(LargeNumber const& lNum);
+	LargeNumber operator +(LargeNumber const& lNum);
 
 	LargeNumber reverse();
 	string reverse(string str);
