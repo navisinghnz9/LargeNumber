@@ -9,10 +9,13 @@ class LargeNumber {
 public:
 	LargeNumber(string num);
 	bool operator ==(LargeNumber const& lNum);
+	bool operator <(LargeNumber const& lNum);
 	LargeNumber operator +(LargeNumber const& lNum);
+	LargeNumber operator -(LargeNumber const& lNum);
 
 	LargeNumber reverse();
 	string reverse(string str);
+	int length();
 
 private:
 	string num;
