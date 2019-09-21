@@ -10,6 +10,9 @@ public:
 	LargeNumber(string num);
 	bool operator ==(LargeNumber const& lNum);
 
+	LargeNumber reverse();
+	string reverse(string str);
+
 private:
 	string num;
 };
