@@ -53,6 +53,17 @@ TEST(LargeNumberTests, SubtractionTest) {
 	EXPECT_EQ(true, R == E);
 }
 
+TEST(LargeNumberTests, MultiplyTest) {
+
+	LargeNumber I("3456");
+	LargeNumber J("789876");
+	LargeNumber E("2729811456");  // expected result
+
+	LargeNumber R = I * J;
+
+	EXPECT_EQ(true, R == E);
+}
+
 int main(int argc, char **argv) {
 	testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();

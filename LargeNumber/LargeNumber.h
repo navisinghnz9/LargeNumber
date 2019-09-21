@@ -8,10 +8,12 @@ using namespace std;
 class LargeNumber {
 public:
 	LargeNumber(string num);
-	bool operator ==(LargeNumber const& lNum);
-	bool operator <(LargeNumber const& lNum);
-	LargeNumber operator +(LargeNumber const& lNum);
-	LargeNumber operator -(LargeNumber const& lNum);
+	bool operator ==(LargeNumber const& rhs);
+	bool operator <(LargeNumber const& rhs);
+	LargeNumber operator +(LargeNumber const& rhs);
+	LargeNumber operator -(LargeNumber const& rhs);
+	LargeNumber operator *(LargeNumber const& rhs);
+
 
 	LargeNumber reverse();
 	string reverse(string str);
