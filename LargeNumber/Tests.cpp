@@ -8,10 +8,13 @@ TEST(LargeNumberTests, LengthTest) {
 
 TEST(LargeNumberTests, EqualToTest) {
 
-	LargeNumber I("1");
-	LargeNumber J("1");
+	LargeNumber I("18121979");
+	LargeNumber J("18121979");
+	LargeNumber K("123456789");
 
 	EXPECT_EQ(true, I == J);
+	EXPECT_EQ(false, I == K);
+	EXPECT_EQ(false, J == K);
 }
 
 TEST(LargeNumberTests, LessThanTest) {
@@ -29,6 +32,7 @@ TEST(LargeNumberTests, ReverseTest) {
 	LargeNumber R = I.reverse();
 
 	EXPECT_EQ(true, R == E);
+	EXPECT_EQ(false, R == I);
 }
 
 TEST(LargeNumberTests, AdditionTest) {
@@ -49,8 +53,10 @@ TEST(LargeNumberTests, SubtractionTest) {
 	LargeNumber E("75308643");  // expected result
 
 	LargeNumber R = I - J;
+	LargeNumber S = R + J;
 
 	EXPECT_EQ(true, R == E);
+	EXPECT_EQ(true, S == I);
 }
 
 TEST(LargeNumberTests, MultiplyTest) {
@@ -58,10 +64,14 @@ TEST(LargeNumberTests, MultiplyTest) {
 	LargeNumber I("3456");
 	LargeNumber J("789876");
 	LargeNumber E("2729811456");  // expected result
-
+	
 	LargeNumber R = I * J;
 
+	LargeNumber Zero("0");
+	LargeNumber P = I * Zero;
+
 	EXPECT_EQ(true, R == E);
+	EXPECT_EQ(true, P == Zero);
 }
 
 TEST(LargeNumberTests, RaiseToPowerTest) {

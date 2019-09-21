@@ -86,7 +86,7 @@ LargeNumber LargeNumber::operator- (LargeNumber const& rhs) {
 		// computing difference of current digits 
 		int sub = ((str1[i] - '0') - (str2[i] - '0') - carry);
 
-		// If subtraction is less than zero, then add 10 into sub
+		// if subtraction is less than zero, then add 10 into sub
 		// and take carry as 1 for calculating next step 
 		if (sub < 0) {
 			sub = sub + 10;
@@ -179,9 +179,9 @@ LargeNumber LargeNumber::operator* (LargeNumber const& rhs) {
 		}
 
 		// store carry in next cell 
-		if (carry > 0)
+		if (carry > 0) {
 			result[i_n1 + i_n2] += carry;
-
+		}
 		// shift position to left after every multiplication of a digit in num1
 		i_n1++;
 	}
